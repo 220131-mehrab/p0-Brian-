@@ -3,9 +3,8 @@
  */
 package DroughtWatch;
 
-import com.revature.droughtwatch.App;
+import com.revature.citydogapp.App;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {

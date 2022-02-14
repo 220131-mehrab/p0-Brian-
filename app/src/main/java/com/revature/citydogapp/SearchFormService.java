@@ -1,4 +1,4 @@
-package com.revature.droughtwatch;
+package com.revature.citydogapp;
 
 public class SearchFormService {
 }

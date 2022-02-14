@@ -1,4 +1,4 @@
-package com.revature.droughtwatch;
+package com.revature.citydogapp;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -7,11 +7,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class DexService extends HttpServlet {
-    private DexRepository dexRepository;
+public class DogService extends HttpServlet {
+    private DogPile dogPile;
 
-    public DexService(DexRepository dexRepository) {
-        this.dexRepository = dexRepository;
+    public DogService(DogPile dogPile) {
+        this.dogPile = dogPile;
     }
 
     @Override
@@ -19,16 +19,16 @@ public class DexService extends HttpServlet {
         String userInput;
         userInput = req.getParameter("searchName");
 
-        if (userInput) != null) {
-            String result = dexRepository.getData(userInput);
+        if (userInput != null) {
+            String result = dogPile.getDogs(userInput);
             resp.getWriter().println(result);
         } else {
-            for (String data : dexRepository.getDataset1()) {
+            for (String data : dogPile.getDogs()) {
                 resp.getWriter().println(data);
             }
         }
 
-        for (String dataset1 : dexRepository.getDataset1()) {
+        for (String dataset1 : dogPile.getDogs()) {
             resp.getWriter().println(dataset1);
         }
     }
