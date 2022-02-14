@@ -1,15 +1,13 @@
 package com.revature.droughtwatch;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class DexRepository {
-    private List<String> dataset1;
-    private InputStream file;
+    private final List<String> dataset1;
+    private final InputStream file;
 
     public DexRepository(String filename) {
         this.dataset1 = new ArrayList<>();
