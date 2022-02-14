@@ -3,6 +3,7 @@
  */
 package DroughtWatch;
 
+import com.revature.droughtwatch.App;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
