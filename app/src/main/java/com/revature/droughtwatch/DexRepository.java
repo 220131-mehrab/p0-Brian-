@@ -26,4 +26,14 @@ public class DexRepository {
     public List<String> getDataset1() {
         return dataset1;
     }
+
+    public String getData(String name) {
+        String result = "";
+        for (String data : this.dataset1) {
+            if (data.contains(name)) {
+                result = data;
+            }
+        }
+        return result;
+    }
 }
