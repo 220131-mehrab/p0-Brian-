@@ -1,4 +1,4 @@
-package com.revature.citydogapp;
+package com.revature.citydogs;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -11,6 +11,7 @@ public class DogService extends HttpServlet {
     private DogPile dogPile;
 
     public DogService(DogPile dogPile) {
+
         this.dogPile = dogPile;
     }
 
@@ -20,16 +21,13 @@ public class DogService extends HttpServlet {
         userInput = req.getParameter("searchName");
 
         if (userInput != null) {
-            String result = dogPile.getDogs(userInput);
+            String result = dogPile.getDog(userInput);
             resp.getWriter().println(result);
         } else {
-            for (String data : dogPile.getDogs()) {
-                resp.getWriter().println(data);
+            for (String dog : dogPile.getDogs()) {
+                resp.getWriter().println(dog);
             }
-        }
-
-        for (String dataset1 : dogPile.getDogs()) {
-            resp.getWriter().println(dataset1);
         }
     }
 }
+

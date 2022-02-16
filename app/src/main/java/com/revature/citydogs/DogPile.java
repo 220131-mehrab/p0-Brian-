@@ -1,4 +1,4 @@
-package com.revature.citydogapp;
+package com.revature.citydogs;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -27,11 +27,11 @@ public class DogPile {
         return cityDogs;
     }
 
-    public String getDogs(String name) {
+    public String getDog(String name) {
         String result = "";
-        for (String dogs : this.cityDogs) {
-            if (dogs.contains(name)) {
-                result = dogs;
+        for (String dog : this.cityDogs) {
+            if (dog.contains(name)) {
+                result = dog;
             }
         }
         return result;
