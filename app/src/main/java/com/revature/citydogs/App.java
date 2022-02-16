@@ -14,7 +14,7 @@ public class App {
         server.setBaseDir(System.getProperty("java.io.tmpdir"));
         server.getConnector();
         server.addContext("", null);
-        server.addServlet("", "dogServlet", dogService).addMapping("/nycdogs");
+        server.addServlet("", "dogServlet", dogService).addMapping("/");
         server.addServlet("", "searchFormServlet", sfService).addMapping("/search");
             try {
                 server.start();
