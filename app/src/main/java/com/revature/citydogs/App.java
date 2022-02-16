@@ -5,6 +5,7 @@ import org.apache.catalina.startup.Tomcat;
 
 public class App {
     public static void main(String[] args) {
+        //String webAppName = "nycdogs";
         DogPile dogPile = new DogPile ("nycdogs.csv");
         DogService dogService = new DogService(dogPile);
         SearchFormService sfService = new SearchFormService();
@@ -14,7 +15,7 @@ public class App {
         server.getConnector();
         server.addContext("", null);
         server.addServlet("", "dogServlet", dogService).addMapping("/nycdogs");
-        server.addServlet("", "searchFromService", "sfService").addMapping("/search");
+        server.addServlet("", "searchFormServlet", sfService).addMapping("/search");
             try {
                 server.start();
             } catch (LifecycleException e) {

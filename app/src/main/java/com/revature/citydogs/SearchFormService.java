@@ -10,20 +10,17 @@ import java.io.IOException;
 public class SearchFormService extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String HTMLForm = "<Html>\n" +
-                "<Head>\n" +
-                "    <Title>Search City Dogs" +
-                "</Title>\n" +
-                "</Head>\n" +
-                "<Body>\n" +
-                "    <form action='/dogs' method='get'>\n" +
-                "        <input type='name' name='searchName'/>\n" +
-                "        <input type='submit' value='Search'/>\n" +
-                "    " +
-                "</form>\n" +
-                "</Body>\n" +
-                "</Html>";
+        String HTMLForm = "<Html>" +
+                "<Head>" +
+                "<Title>NYC Dog Search</Title>" +
+                "</Head>" +
+                "<body>" +
+                "    <form action='/nycdogs' method='get'>" +
+                "        <input type='name' name='searchName'/>" +
+                "        <input type='submit' value='Search'/>    " +
+                "</form>" +
+                "</body>" +
+                "</html>";
         resp.getWriter().println(HTMLForm);
     }
-
 }
