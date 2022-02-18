@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class DogPile {
+public class DogRepo {
     private List<String> cityDogs;
     private InputStream file;
 
-    public DogPile(String filename) {
+    public DogRepo(String filename) {
         this.cityDogs = new ArrayList<>();
         this.file = getClass().getClassLoader().getResourceAsStream(filename);
         load();
@@ -22,11 +22,12 @@ public class DogPile {
             this.cityDogs.add(scanner.next());
         }
     }
-
+// returns entire CSV
     public List<String> getDogs() {
         return cityDogs;
     }
 
+// returns single entry
     public String getDog(String name) {
         String result = "";
         for (String dog : this.cityDogs) {
@@ -36,4 +37,7 @@ public class DogPile {
         }
         return result;
     }
+// parse CSV
+
+
 }

@@ -7,12 +7,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class DogService extends HttpServlet {
-    private DogPile dogPile;
+public class DogServlet extends HttpServlet {
+    private DogRepo dogRepo;
 
-    public DogService(DogPile dogPile) {
+    public DogServlet(DogRepo dogRepo) {
 
-        this.dogPile = dogPile;
+        this.dogRepo = dogRepo;
     }
 
     @Override
@@ -21,10 +21,10 @@ public class DogService extends HttpServlet {
         userInput = req.getParameter("searchName");
 
         if (userInput != null) {
-            String result = dogPile.getDog(userInput);
+            String result = dogRepo.getDog(userInput);
             resp.getWriter().println(result);
         } else {
-            for (String dog : dogPile.getDogs()) {
+            for (String dog : dogRepo.getDogs()) {
                 resp.getWriter().println(dog);
             }
         }

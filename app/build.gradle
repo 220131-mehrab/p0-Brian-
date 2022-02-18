@@ -30,6 +30,8 @@ dependencies {
     implementation 'com.google.guava:guava:30.1.1-jre'
     //tomcat
     implementation 'org.apache.tomcat.embed:tomcat-embed-core:10.1.0-M10'
+    //OpenCSV (to help parse)
+    implementation 'com.opencsv:opencsv:5.5.2'
 }
 
 test {
